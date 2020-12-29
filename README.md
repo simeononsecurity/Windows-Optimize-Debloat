@@ -3,9 +3,7 @@ For those who seek to minimize their Windows 10 installs.
 
 # Optimize, Harden, and Debloat Windows 10 Deployments
 
-**Download all the required files from the [GitHub Repository](https://github.com/smiltech/Windows-Optimize-Harden-Debloat)**
-
-**We are seeking help with the following [.Net issue](https://github.com/simeononsecurity/Windows-Optimize-Harden-Debloat/issues/3)** 
+**Download all the required files from the [GitHub Repository](https://github.com/simeononsecurity/Windows-Optimize-Debloat)**
 
 ## Introduction:
 Windows 10 is an invasive and insecure operating system out of the box. 
