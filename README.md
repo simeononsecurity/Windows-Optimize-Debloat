@@ -51,5 +51,3 @@ The script may be launched from the extracted GitHub download like this:
 ```powershell
 iex ((New-Object System.Net.WebClient).DownloadString('https://simeononsecurity.ch/scripts/windowsoptimizeanddebloat.ps1'))
 ```
-<img src="https://raw.githubusercontent.com/simeononsecurity/Windows-Optimize-Debloat/master/.github/images/w10automatic.gif" alt="Example of 
-Windows-Optimize-Harden-Debloat automatic install">
