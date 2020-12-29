@@ -237,19 +237,13 @@ Start-Job -Name "SMB Optimizations" -ScriptBlock {
     Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" FileInfoCacheEntriesMax -Value 1024 -Force
     Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" DirectoryCacheEntriesMax -Value 1024 -Force
     Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" FileNotFoundCacheEntriesMax -Value 2048 -Force
-    Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" RequireSecuritySignature -Value 256 -Force
     Set-SmbServerConfiguration -EnableMultiChannel $true -Force 
     Set-SmbServerConfiguration -EnableSMB1Protocol $false -Force 
-    Set-SmbServerConfiguration -RequireSecuritySignature $True -Force 
-    Set-SmbServerConfiguration -EnableSecuritySignature $True -Force 
-    Set-SmbServerConfiguration -EncryptData $True -Force 
     Set-SmbServerConfiguration -MaxChannelPerSession 16 -Force
     Set-SmbServerConfiguration -ServerHidden $False -AnnounceServer $False -Force
     Set-SmbServerConfiguration -EnableLeasing $false -Force
     Set-SmbClientConfiguration -EnableLargeMtu $true -Force
     Set-SmbClientConfiguration -EnableMultiChannel $true -Force
-    Set-SmbClientConfiguration -RequireSecuritySignature $True -Force
-    Set-SmbClientConfiguration -EnableSecuritySignature $True -Force
 }
 
 Start-Job -Name "Remove Windows Bloatware" -ScriptBlock {
