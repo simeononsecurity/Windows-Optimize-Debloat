@@ -1,8 +1,6 @@
 # Windows-Optimize-Debloat
 For those who seek to minimize their Windows 10 installs.
 
-# Optimize, Harden, and Debloat Windows 10 Deployments
-
 **Download all the required files from the [GitHub Repository](https://github.com/simeononsecurity/Windows-Optimize-Debloat)**
 
 ## Introduction:
