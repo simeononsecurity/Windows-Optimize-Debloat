@@ -26,7 +26,7 @@ Organizations like [Microsoft](https://microsoft.com), [PrivacyTools.io](https:/
 
 ## Additional configurations were considered from:
 - [BuiltByBel - PrivateZilla](https://github.com/builtbybel/privatezilla)
-- [CERT - IE Scripting Engine Memory Corruption](https://kb.cert.org/vuls/id/573168/)
+- [MelodysTweaks - Basic Tweaks](https://sites.google.com/view/melodystweaks/basictweaks)
 - [Microsoft - Managing Windows 10 Telemetry and Callbacks](https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services)
 - [Microsoft - Windows 10 Privacy](https://docs.microsoft.com/en-us/windows/privacy/)
 - [Microsoft - Windows 10 VDI Recomendations](https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/rds_vdi-recommendations-1909)
