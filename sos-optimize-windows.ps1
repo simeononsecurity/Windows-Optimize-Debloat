@@ -1109,8 +1109,8 @@ Start-Job -Name "Enable Privacy Settings" -ScriptBlock {
     #Restrict License Manager
     Write-Output "Restrict License Manager"
     Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Services\LicenseManager" -Name Start -Type "DWORD" -Value 4 -Force
-    Set-Service -Name "LicenseManager" -StartupType "Automatic"
-    Start-Service -Name "LicenseManager"
+    #Set-Service -Name "LicenseManager" -StartupType "Automatic"
+    #Start-Service -Name "LicenseManager"
     #Disable Live Tiles
     Write-Output "Disable Live Tiles"
     Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\CurrentVersion\PushNotifications" -Name NoCloudApplicationNotification -Type "DWORD" -Value 1 -Force
