@@ -1,7 +1,7 @@
 # Windows-Optimize-Debloat
-For those who seek to minimize their Windows 10 installs.
+*For those who seek to minimize their Windows 10 installs.*
 
-This script should work for most, if not all, systems without issue. While [@SimeonOnSecurity](https://github.com/simeononsecurity) creates, reviews, and tests each repo intensivly, we can not test every possible configuration nor does [@SimeonOnSecurity](https://github.com/simeononsecurity) take any responsibility for breaking your system. If something goes wrong, be prepared to submit an [issue](./issues). Do not run this script if you don't understand what it does.
+**Note:** This script should work for most, if not all, systems without issue. While [@SimeonOnSecurity](https://github.com/simeononsecurity) creates, reviews, and tests each repo intensivly, we can not test every possible configuration nor does [@SimeonOnSecurity](https://github.com/simeononsecurity) take any responsibility for breaking your system. If something goes wrong, be prepared to submit an [issue](./issues). Do not run this script if you don't understand what it does.
 
 ## Introduction:
 Windows 10 is an invasive and insecure operating system out of the box. 
