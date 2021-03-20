@@ -49,5 +49,5 @@ Get-ChildItem -Recurse *.ps1 | Unblock-File
 ### Automated Install:
 The script may be launched from the extracted GitHub download like this:
 ```powershell
-iex ((New-Object System.Net.WebClient).DownloadString('https://simeononsecurity.ch/scripts/windowsoptimizeanddebloat.ps1'))
+iwr -useb 'https://simeononsecurity.ch/scripts/windowsoptimizeanddebloat.ps1'|iex
 ```
