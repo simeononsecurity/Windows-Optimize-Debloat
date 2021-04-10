@@ -1772,13 +1772,13 @@ $domains = @(
     "hostedocsp.globalsign.com"
     "i1.services.social.microsoft.com"
     "i1.services.social.microsoft.com.nsatc.net"
-    "ipv6.msftncsi.com"
-    "ipv6.msftncsi.com.edgesuite.net"
+    #"ipv6.msftncsi.com" # Issues may arise where Windows 10 thinks it doesn't have internet
+    #"ipv6.msftncsi.com.edgesuite.net" # Issues may arise where Windows 10 thinks it doesn't have internet
     "lb1.www.ms.akadns.net"
     "live.rads.msn.com"
     "m.adnxs.com"
     "msedge.net"
-    "msftncsi.com"
+    #"msftncsi.com" # Issues may arise where Windows 10 thinks it doesn't have internet
     "msnbot-65-55-108-23.search.msn.com"
     "msntest.serving-sys.com"
     "oca.Telemetry.microsoft.com"
