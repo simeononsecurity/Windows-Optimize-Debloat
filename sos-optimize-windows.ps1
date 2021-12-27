@@ -458,10 +458,6 @@ Start-Job -Name "Disable Telemetry and Services" -ScriptBlock {
     Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Office\15.0\Common" -Name "QMEnable" -Type "DWORD" -Value 0 -Force
     Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Office\16.0\Common" -Name "QMEnable" -Type "DWORD" -Value 0 -Force
 
-    #
-    Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\services\wlidsvc" -Name Start -Type "DWORD" -Value 4 -Force
-    Set-Service wlidsvc -StartupType Disabled
-
     #Disable Visual Studio Code Telemetry
     New-Item -Path "HKLM:\Software\Wow6432Node\Microsoft\VSCommon\14.0\SQM" -Force
     New-Item -Path "HKLM:\Software\Wow6432Node\Microsoft\VSCommon\15.0\SQM" -Force
@@ -493,8 +489,6 @@ Start-Job -Name "Disable Telemetry and Services" -ScriptBlock {
     Set-Service "RetailDemo" -StartupType Disabled
     Stop-Service "MapsBroker"
     Set-Service "MapsBroker" -StartupType Disabled
-    Stop-Service "wlidsvc"
-    Set-Service "wlidsvc" -StartupType Disabled
     Stop-Service "DoSvc"
     Set-Service "DoSvc" -StartupType Disabled
     Stop-Service "OneSyncSvc"
@@ -921,8 +915,8 @@ Start-Job -Name "Enable Privacy Settings" -ScriptBlock {
     Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Internet Explorer\Feeds" -Name BackgroundSyncStatus -Type "DWORD" -Value 0 -Force
     Set-ItemProperty -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -Name AllowOnlineTips -Type "DWORD" -Value 0 -Force
     #Restrict License Manager
-    Write-Output "Restrict License Manager"
-    Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Services\LicenseManager" -Name Start -Type "DWORD" -Value 4 -Force
+    #Write-Output "Restrict License Manager"
+    #Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Services\LicenseManager" -Name Start -Type "DWORD" -Value 4 -Force
     #Set-Service -Name "LicenseManager" -StartupType "Automatic"
     #Start-Service -Name "LicenseManager"
     #Disable Live Tiles
@@ -932,8 +926,8 @@ Start-Job -Name "Enable Privacy Settings" -ScriptBlock {
     Write-Output "Disable Windows Mail App"
     Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows Mail" -Name ManualLaunchAllowed -Type "DWORD" -Value 0 -Force
     #Disable Microsoft Account cloud authentication service
-    Write-Output "Disable Microsoft Account cloud authentication service"
-    Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Services\wlidsvc" -Name Start -Type "DWORD" -Value 4 -Force
+    #Write-Output "Disable Microsoft Account cloud authentication service"
+    #Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Services\wlidsvc" -Name Start -Type "DWORD" -Value 4 -Force
     #Disable Network Connection Status Indicator
     #Write-Output "Disable Network Connection Status Indicator"
     #Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\NetworkConnectivityStatusIndicator" -Name NoActiveProbe -Type "DWORD" -Value 1 -Force
@@ -1382,10 +1376,6 @@ Start-Job -Name "Enable Privacy Settings" -ScriptBlock {
     Set-ItemProperty -Path "HKCU:\Software\Policies\Microsoft\Office\15.0\osm" -Name "EnableUpload" -Type "DWORD" -Value 0 -Force
     Set-ItemProperty -Path "HKCU:\Software\Policies\Microsoft\Office\16.0\osm" -Name "Enablelogging" -Type "DWORD" -Value 0 -Force
     Set-ItemProperty -Path "HKCU:\Software\Policies\Microsoft\Office\16.0\osm" -Name "EnableUpload" -Type "DWORD" -Value 0 -Force
-
-    #Disable Microsoft Windows Live ID service
-    Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\services\wlidsvc" -Name Start -Type "DWORD" -Value 4 -Force
-    Set-Service wlidsvc -StartupType Disabled
 
     #Disable Mozilla Firefox Telemetry
     Set-ItemProperty -Path "HKLM:\Software\Policies\Mozilla\Firefox" -Name "DisableTelemetry" -Type "DWORD" -Value 1 -Force
