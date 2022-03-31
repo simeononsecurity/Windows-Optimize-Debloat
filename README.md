@@ -24,7 +24,8 @@ Organizations like [Microsoft](https://microsoft.com), [PrivacyTools.io](https:/
 ## Fixing Microsoft Account or Xbox Services:
 This is because we block signing into microsoft accounts. Microsoft's telemetry and identity association is frowned upon. 
 However, if you still wish to use these services see the following issue tickets for the resolution:
-- https://github.com/simeononsecurity/Windows-Optimize-Harden-Debloat/issues/19
+- https://github.com/simeononsecurity/Windows-Optimize-Harden-Debloat/issues/1
+- https://github.com/simeononsecurity/Windows-Optimize-Harden-Debloat/issues/16
 - https://github.com/simeononsecurity/Windows-Optimize-Harden-Debloat/issues/22
 
 ## A list of scripts and tools this collection utilizes:
