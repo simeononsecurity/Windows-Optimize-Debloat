@@ -21,6 +21,12 @@ Organizations like [Microsoft](https://microsoft.com), [PrivacyTools.io](https:/
   - Currently Windows 10 **v1909**, **v2004**, or **20H2**. 
   - Run the [Windows 10 Upgrade Assistant](https://support.microsoft.com/en-us/help/3159635/windows-10-update-assistant) to update and verify latest major release.
 
+## Fixing Microsoft Account or Xbox Services:
+This is because we block signing into microsoft accounts. Microsoft's telemetry and identity association is frouned upon. 
+However, if you still wish to use these services see the following issue tickets for the resolution:
+- https://github.com/simeononsecurity/Windows-Optimize-Harden-Debloat/issues/19
+- https://github.com/simeononsecurity/Windows-Optimize-Harden-Debloat/issues/22
+
 ## A list of scripts and tools this collection utilizes:
 - [Microsoft Security Compliance Toolkit 1.0](https://www.microsoft.com/en-us/download/details.aspx?id=55319)
 
