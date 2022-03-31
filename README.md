@@ -22,7 +22,7 @@ Organizations like [Microsoft](https://microsoft.com), [PrivacyTools.io](https:/
   - Run the [Windows 10 Upgrade Assistant](https://support.microsoft.com/en-us/help/3159635/windows-10-update-assistant) to update and verify latest major release.
 
 ## Fixing Microsoft Account or Xbox Services:
-This is because we block signing into microsoft accounts. Microsoft's telemetry and identity association is frouned upon. 
+This is because we block signing into microsoft accounts. Microsoft's telemetry and identity association is frowned upon. 
 However, if you still wish to use these services see the following issue tickets for the resolution:
 - https://github.com/simeononsecurity/Windows-Optimize-Harden-Debloat/issues/19
 - https://github.com/simeononsecurity/Windows-Optimize-Harden-Debloat/issues/22
