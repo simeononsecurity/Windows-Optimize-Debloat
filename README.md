@@ -1,10 +1,10 @@
 # Windows-Optimize-Debloat
-*For those who seek to minimize their Windows 10 installs.*
+*For those who seek to minimize their Windows 10 and 11 installs.*
 
 **Note:** This script should work for most, if not all, systems without issue. While [@SimeonOnSecurity](https://github.com/simeononsecurity) creates, reviews, and tests each repo intensivly, we can not test every possible configuration nor does [@SimeonOnSecurity](https://github.com/simeononsecurity) take any responsibility for breaking your system. If something goes wrong, be prepared to submit an [issue](../../issues). Do not run this script if you don't understand what it does.
 
 ## Introduction:
-Windows 10 is an invasive and insecure operating system out of the box. 
+Windows 10 and 11 is are invasive and insecure operating system out of the box. 
 Organizations like [Microsoft](https://microsoft.com), [PrivacyTools.io](https://PrivacyTools.io), and others have recommended configuration changes to optimize and debloat the Windows 10 operating system. These changes are include blocking telemetry, deleting logs, and removing bloatware to name a few. This script aims to automate the configurations recommended by those organizations.
 
 ## Notes: 
@@ -14,11 +14,10 @@ Organizations like [Microsoft](https://microsoft.com), [PrivacyTools.io](https:/
 - If you seek a minimized script targeted only to commercial environments, please see this [GitHub Repository](https://github.com/simeononsecurity/Standalone-Windows-STIG-Script)
 
 ## Requirements:
-- [X] Windows 10 Enterprise, Windows 10 Professional, or Windows 10 Home
-  - Windows 10 Home does not allow for GPO configurations.
+- [X] Windows 10/11 Enterprise, Windows 10 Professional, or Windows 10 Home
+  - Windows Home does not allow for GPO configurations.
     - Script will still work but not all settings will apply.
-  - Windows 10 "N" Editions are not tested.
-  - Currently Windows 10 **v1909**, **v2004**, or **20H2**. 
+  - Windows "N" Editions are not tested.
   - Run the [Windows 10 Upgrade Assistant](https://support.microsoft.com/en-us/help/3159635/windows-10-update-assistant) to update and verify latest major release.
 
 ## Fixing Microsoft Account or Xbox Services:
