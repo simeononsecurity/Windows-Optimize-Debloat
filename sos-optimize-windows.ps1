@@ -5,6 +5,9 @@ $ErrorActionPreference = 'silentlycontinue'
 #Require elivation for script run
 #Requires -RunAsAdministrator
 
+#Set Directory to PSScriptRoot
+if ((Get-Location).Path -NE $PSScriptRoot) { Set-Location $PSScriptRoot }
+
 #Install PowerShell Modules
 Copy-Item -Path .\Files\"PowerShell Modules"\* -Destination C:\Windows\System32\WindowsPowerShell\v1.0\Modules -Force -Recurse
 #Unblock New PowerShell Modules
