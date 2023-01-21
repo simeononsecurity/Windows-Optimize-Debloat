@@ -15,6 +15,19 @@ Get-ChildItem C:\Windows\System32\WindowsPowerShell\v1.0\Modules\PSWindowsUpdate
 #Install PSWindowsUpdate
 Import-Module -Name PSWindowsUpdate -Force -Global
 
+# Install Local Group Policy if Not Already Installed   
+foreach ($F in (Get-ChildItem "$env:SystemRoot\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientTools-Package~*.mum").FullName) {
+        if((dism /online /get-packages | where-object {$_.name -like "*Microsoft-Windows-GroupPolicy-ClientTools*"}).count -eq 0){
+            dism /Online /NoRestart /Add-Package:$F 
+        }   
+}    
+foreach ($F in (Get-ChildItem "$env:SystemRoot\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientExtensions-Package~*.mum").FullName) {
+        if((dism /online /get-packages | where-object {$_.name -like "*Microsoft-Windows-GroupPolicy-ClientExtensions*"}).count -eq 0){
+            dism /Online /NoRestart /Add-Package:$F
+        }  
+}
+
+
 #Remove and Refresh Local Policies
 Remove-Item -Recurse -Force "$env:WinDir\System32\GroupPolicy" | Out-Null
 Remove-Item -Recurse -Force "$env:WinDir\System32\GroupPolicyUsers" | Out-Null
