@@ -58,15 +58,15 @@ If manually downloaded, the script must be launched from an administrative power
 
 The script "sos-optimize-windows.ps1" includes several parameters that allow for customization of the optimization process. Each parameter is a boolean value that defaults to true if not specified.
 
-- $cleargpos: Clears Group Policy Objects settings.
-- $installupdates: Installs updates to the system.
-- $removebloatware: Removes unnecessary programs and features from the system.
-- $disabletelemetry: Disables data collection and telemetry.
-- $privacy: Makes changes to improve privacy.
-- $imagecleanup: Cleans up unneeded files from the system.
-- $diskcompression: Compresses the system disk.
-- $updatemanagement: Changes the way updates are managed on the system.
-- $sosbrowsers: Optimizes the system's web browsers.
+- **$cleargpos**: Clears Group Policy Objects settings.
+- **$installupdates**: Installs updates to the system.
+- **$removebloatware**: Removes unnecessary programs and features from the system.
+- **$disabletelemetry**: Disables data collection and telemetry.
+- **$privacy**: Makes changes to improve privacy.
+- **$imagecleanup**: Cleans up unneeded files from the system.
+- **$diskcompression**: Compresses the system disk.
+- **$updatemanagement**: Changes the way updates are managed on the system.
+- **$sosbrowsers**: Optimizes the system's web browsers.
 
 An example of how to launch the script with specific parameters would be:
 
