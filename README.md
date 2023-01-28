@@ -48,15 +48,31 @@ However, if you still wish to use these services see the following issue tickets
 - [W4H4WK - Debloat Windows 10](https://github.com/W4RH4WK/Debloat-Windows-10/tree/master/scripts)
 
 ## How to run the script
-### Manual Install:
-If manually downloaded, the script must be launched from an administrative powershell in the directory containing all the files from the [GitHub Repository](https://github.com/simeononsecurity/Windows-Optimize-Harden-Debloat)
-```powershell
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Force
-Get-ChildItem -Recurse *.ps1 | Unblock-File
-.\sos-optimize-windows.ps1
-```
 ### Automated Install:
 The script may be launched from the extracted GitHub download like this:
 ```powershell
 iwr -useb 'https://simeononsecurity.ch/scripts/windowsoptimizeanddebloat.ps1'|iex
 ```
+### Manual Install:
+If manually downloaded, the script must be launched from an administrative powershell in the directory containing all the files from the [GitHub Repository](https://github.com/simeononsecurity/Windows-Optimize-Debloat)
+
+The script "sos-optimize-windows.ps1" includes several parameters that allow for customization of the optimization process. Each parameter is a boolean value that defaults to true if not specified.
+
+- $cleargpos: Clears Group Policy Objects settings.
+- $installupdates: Installs updates to the system.
+- $removebloatware: Removes unnecessary programs and features from the system.
+- $disabletelemetry: Disables data collection and telemetry.
+- $privacy: Makes changes to improve privacy.
+- $imagecleanup: Cleans up unneeded files from the system.
+- $diskcompression: Compresses the system disk.
+- $updatemanagement: Changes the way updates are managed on the system.
+- $sosbrowsers: Optimizes the system's web browsers.
+
+An example of how to launch the script with specific parameters would be:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Force
+Get-ChildItem -Recurse *.ps1 | Unblock-File
+powershell.exe -ExecutionPolicy ByPass -File .\sos-optimize-windows.ps1 -cleargpos:$false -installupdates:$false
+```
+
