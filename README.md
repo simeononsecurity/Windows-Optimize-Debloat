@@ -47,7 +47,7 @@ However, if you still wish to use these services see the following issue tickets
 - [TheVDIGuys - Windows 10 VDI Optimize](https://github.com/TheVDIGuys/Windows_10_VDI_Optimize)
 - [W4H4WK - Debloat Windows 10](https://github.com/W4RH4WK/Debloat-Windows-10/tree/master/scripts)
 
-## How to run the script
+## How to run the script:
 ### Automated Install:
 The script may be launched from the extracted GitHub download like this:
 ```powershell
