@@ -65,7 +65,7 @@ The script "sos-optimize-windows.ps1" includes several parameters that allow for
 - **$privacy**: Makes changes to improve privacy.
 - **$imagecleanup**: Cleans up unneeded files from the system.
 - **$diskcompression**: Compresses the system disk.
-- **$updatemanagement**: Changes the way updates are managed on the system.
+- **$updatemanagement**: Changes the way updates are managed and improved on the system.
 - **$sosbrowsers**: Optimizes the system's web browsers.
 
 An example of how to launch the script with specific parameters would be:
