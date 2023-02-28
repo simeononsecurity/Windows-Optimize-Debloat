@@ -1580,7 +1580,7 @@ if ($imagecleanup -eq $true) {
     Start-Job -Name "Image Cleanup" -ScriptBlock {
         #Delete "windows.old" folder
         #Cmd.exe /c Cleanmgr /sageset:65535 
-        Cmd.exe /c Cleanmgr /sagerun:65535
+        #Cmd.exe /c Cleanmgr /sagerun:65535
         Write-Verbose "Removing .tmp, .etl, .evtx, thumbcache*.db, *.log files not in use"
         Get-ChildItem -Path c:\ -Include *.tmp, *.dmp, *.etl, *.evtx, thumbcache*.db, *.log -File -Recurse -Force -ErrorAction SilentlyContinue | Remove-Item -ErrorAction SilentlyContinue
         #Delete "RetailDemo" content (if it exits)
