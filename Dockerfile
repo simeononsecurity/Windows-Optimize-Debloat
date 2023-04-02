@@ -19,6 +19,7 @@ RUN iex ((new-object net.webclient).DownloadString('https://chocolatey.org/insta
 #RUN refreshenv
 #RUN Add-WUServiceManager -ServiceID 7971f918-a847-4430-9279-4a52d1efe18d -Confirm:$false ; Install-WindowsUpdate -MicrosoftUpdate -AcceptAll -Install ; Get-WuInstall -AcceptAll -IgnoreReboot -IgnoreUserInput -nottitle 'preview' ; Get-WindowsUpdate –Install    
 
-RUN iwr -useb 'https://simeononsecurity.ch/scripts/windowsoptimizeanddebloat.ps1'|iex
+RUN try { iwr -useb 'https://simeononsecurity.ch/scripts/windowsoptimizeanddebloat.ps1' | iex } catch { Write-Error $_.Exception.Message }
+
 
 ENTRYPOINT ENTRYPOINT [ "powershell.exe" ]
