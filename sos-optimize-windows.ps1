@@ -63,7 +63,7 @@ if ($paramscheck | Where-Object { $_ } | Select-Object) {
 
 # Install Local Group Policy if Not Already Installed
 if ($paramscheck | Where-Object { $_ } | Select-Object) {
-    Start-Job -Name InstallGPOPackages -ScriptBlock {
+    Start-Job -Name "InstallGPOPackages" -ScriptBlock {
         foreach ($F in (Get-ChildItem "$env:SystemRoot\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientTools-Package~*.mum").FullName) {
             if ((dism /online /get-packages | where-object { $_.name -like "*Microsoft-Windows-GroupPolicy-ClientTools*" }).count -eq 0) {
                 dism /Online /NoRestart /Add-Package:$F
