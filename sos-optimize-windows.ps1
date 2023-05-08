@@ -1610,121 +1610,121 @@ if ($imagecleanup -eq $true) {
         #Delete controversial default0 user
         net user defaultuser0 /delete 2>nul
         #Clear thumbnail cache
-        Remove-Item /f /s /q /a $env:LocalAppData\Microsoft\Windows\Explorer\*.db
+        Remove-Item -Force -Confirm:$false -Recurse $env:LocalAppData\Microsoft\Windows\Explorer\*.db
         #Clear Windows temp files
-        Remove-Item /f /q $env:localappdata\Temp\*
-        Remove-Item /s /q "$env:WINDIR\Temp"
-        Remove-Item /s /q "$env:TEMP"
+        Remove-Item -Force -Confirm:$false $env:localappdata\Temp\*
+        Remove-Item -Force -Confirm:$false "$env:WINDIR\Temp"
+        Remove-Item -Force -Confirm:$false "$env:TEMP"
         #Clear main telemetry file
         takeown /f "$env:ProgramData\Microsoft\Diagnosis\ETLLogs\AutoLogger\AutoLogger-Diagtrack-Listener.etl" /r -Value y
         icacls "$env:ProgramData\Microsoft\Diagnosis\ETLLogs\AutoLogger\AutoLogger-Diagtrack-Listener.etl" /grant administrators:F /t
         Write-Output"" > "$env:ProgramData\Microsoft\Diagnosis\ETLLogs\AutoLogger\AutoLogger-Diagtrack-Listener.etl"
         Write-Output Clear successful: "$env:ProgramData\Microsoft\Diagnosis\ETLLogs\AutoLogger\AutoLogger-Diagtrack-Listener.etl"
         #Clear Distributed Transaction Coordinator logs
-        Remove-Item /f /q $env:SystemRoot\DtcInstall.log
+        Remove-Item -Force -Confirm:$false  $env:SystemRoot\DtcInstall.log
         #Clear Optional Component Manager and COM+ components logs
-        Remove-Item /f /q $env:SystemRoot\comsetup.log
+        Remove-Item -Force -Confirm:$false $env:SystemRoot\comsetup.log
         #Clear Pending File Rename Operations logs
-        Remove-Item /f /q $env:SystemRoot\PFRO.log
+        Remove-Item -Force -Confirm:$false $env:SystemRoot\PFRO.log
         #Clear Windows Deployment Upgrade Process Logs
-        Remove-Item /f /q $env:SystemRoot\setupact.log
-        Remove-Item /f /q $env:SystemRoot\setuperr.log
+        Remove-Item -Force -Confirm:$false  $env:SystemRoot\setupact.log
+        Remove-Item -Force -Confirm:$false $env:SystemRoot\setuperr.log
         #Clear Windows Setup Logs
-        Remove-Item /f /q $env:SystemRoot\setupapi.log
-        Remove-Item /f /q $env:SystemRoot\Panther\*
-        Remove-Item /f /q $env:SystemRoot\inf\setupapi.app.log
-        Remove-Item /f /q $env:SystemRoot\inf\setupapi.dev.log
-        Remove-Item /f /q $env:SystemRoot\inf\setupapi.offline.log
+        Remove-Item -Force -Confirm:$false $env:SystemRoot\setupapi.log
+        Remove-Item -Force -Confirm:$false $env:SystemRoot\Panther\*
+        Remove-Item -Force -Confirm:$false $env:SystemRoot\inf\setupapi.app.log
+        Remove-Item -Force -Confirm:$false $env:SystemRoot\inf\setupapi.dev.log
+        Remove-Item -Force -Confirm:$false $env:SystemRoot\inf\setupapi.offline.log
         #Clear Windows System Assessment Tool logs
-        Remove-Item /f /q $env:SystemRoot\Performance\WinSAT\winsat.log
+        Remove-Item -Force -Confirm:$false $env:SystemRoot\Performance\WinSAT\winsat.log
         #Clear Password change events
-        Remove-Item /f /q $env:SystemRoot\debug\PASSWD.LOG
+        Remove-Item -Force -Confirm:$false $env:SystemRoot\debug\PASSWD.LOG
         #Clear user web cache database
-        Remove-Item /f /q $env:LocalAppData\Microsoft\Windows\WebCache\*.*
+        Remove-Item -Force -Confirm:$false $env:LocalAppData\Microsoft\Windows\WebCache\*.*
         #Clear system temp folder when noone is logged in
-        Remove-Item /f /q $env:SystemRoot\ServiceProfiles\LocalService\AppData\Local\Temp\*.*
+        Remove-Item -Force -Confirm:$false $env:SystemRoot\ServiceProfiles\LocalService\AppData\Local\Temp\*.*
         #Clear DISM (Deployment Image Servicing and Management) Logs
-        Remove-Item /f /q  $env:SystemRoot\Logs\CBS\CBS.log
-        Remove-Item /f /q  $env:SystemRoot\Logs\DISM\DISM.log
+        Remove-Item -Force -Confirm:$false  $env:SystemRoot\Logs\CBS\CBS.log
+        Remove-Item -Force -Confirm:$false  $env:SystemRoot\Logs\DISM\DISM.log
         #Clear Server-initiated Healing Events Logs
-        Remove-Item /f /q "$env:SystemRoot\Logs\SIH\*"
+        Remove-Item -Force -Confirm:$false "$env:SystemRoot\Logs\SIH\*"
         #Common Language Runtime Logs
-        Remove-Item /f /q "$env:LocalAppData\Microsoft\CLR_v4.0\UsageTraces\*"
-        Remove-Item /f /q "$env:LocalAppData\Microsoft\CLR_v4.0_32\UsageTraces\*"
+        Remove-Item -Force -Confirm:$false "$env:LocalAppData\Microsoft\CLR_v4.0\UsageTraces\*"
+        Remove-Item -Force -Confirm:$false "$env:LocalAppData\Microsoft\CLR_v4.0_32\UsageTraces\*"
         #Network Setup Service Events Logs
-        Remove-Item /f /q "$env:SystemRoot\Logs\NetSetup\*"
+        Remove-Item -Force -Confirm:$false "$env:SystemRoot\Logs\NetSetup\*"
         #Disk Cleanup tool (Cleanmgr.exe) Logs
-        Remove-Item /f /q "$env:SystemRoot\System32\LogFiles\setupcln\*"
+        Remove-Item -Force -Confirm:$false "$env:SystemRoot\System32\LogFiles\setupcln\*"
         #Clear Windows update and SFC scan logs
-        Remove-Item /f /q $env:SystemRoot\Temp\CBS\*
+        Remove-Item -Force -Confirm:$false $env:SystemRoot\Temp\CBS\*
         #Clear Windows Update Medic Service logs
         takeown /f $env:SystemRoot\Logs\waasmedic /r -Value y
         icacls $env:SystemRoot\Logs\waasmedic /grant administrators:F /t
-        Remove-Item /s /q $env:SystemRoot\Logs\waasmedic
+        Remove-Item -Force -Confirm:$false $env:SystemRoot\Logs\waasmedic
         #Clear Cryptographic Services Traces
-        Remove-Item /f /q $env:SystemRoot\System32\catroot2\dberr.txt
-        Remove-Item /f /q $env:SystemRoot\System32\catroot2.log
-        Remove-Item /f /q $env:SystemRoot\System32\catroot2.jrs
-        Remove-Item /f /q $env:SystemRoot\System32\catroot2.edb
-        Remove-Item /f /q $env:SystemRoot\System32\catroot2.chk
+        Remove-Item -Force -Confirm:$false $env:SystemRoot\System32\catroot2\dberr.txt
+        Remove-Item -Force -Confirm:$false $env:SystemRoot\System32\catroot2.log
+        Remove-Item -Force -Confirm:$false $env:SystemRoot\System32\catroot2.jrs
+        Remove-Item -Force -Confirm:$false $env:SystemRoot\System32\catroot2.edb
+        Remove-Item -Force -Confirm:$false $env:SystemRoot\System32\catroot2.chk
         #Windows Update Events Logs
-        Remove-Item /f /q "$env:SystemRoot\Logs\SIH\*"
+        Remove-Item -Force -Confirm:$false "$env:SystemRoot\Logs\SIH\*"
         #Windows Update Logs
-        Remove-Item /f /q "$env:SystemRoot\Traces\WindowsUpdate\*"
+        Remove-Item -Force -Confirm:$false "$env:SystemRoot\Traces\WindowsUpdate\*"
         #Clear Internet Explorer traces
-        Remove-Item /f /q "$env:LocalAppData\Microsoft\Windows\INetCache\IE\*"
+        Remove-Item -Force -Confirm:$false "$env:LocalAppData\Microsoft\Windows\INetCache\IE\*"
         reg delete "HKCU\SOFTWARE\Microsoft\Internet Explorer\TypedURLs" /va /f
         reg delete "HKCU\SOFTWARE\Microsoft\Internet Explorer\TypedURLsTime" /va /f
-        Remove-Item /s /q "$env:LocalAppData\Microsoft\Internet Explorer"
-        Remove-Item /s /q "$env:APPDATA\Microsoft\Windows\Cookies"
-        Remove-Item /s /q "$env:USERPROFILE\Cookies"
-        Remove-Item /s /q "$env:USERPROFILE\Local Settings\Traces"
-        Remove-Item /s /q "$env:LocalAppData\Temporary Internet Files"
-        Remove-Item /s /q "$env:LocalAppData\Microsoft\Windows\Temporary Internet Files"
-        Remove-Item /s /q "$env:LocalAppData\Microsoft\Windows\INetCookies\PrivacIE"
-        Remove-Item /s /q "$env:LocalAppData\Microsoft\Feeds Cache"
-        Remove-Item /s /q "$env:LocalAppData\Microsoft\InternetExplorer\DOMStore"
+        Remove-Item -Force -Confirm:$false "$env:LocalAppData\Microsoft\Internet Explorer"
+        Remove-Item -Force -Confirm:$false "$env:APPDATA\Microsoft\Windows\Cookies"
+        Remove-Item -Force -Confirm:$false "$env:USERPROFILE\Cookies"
+        Remove-Item -Force -Confirm:$false "$env:USERPROFILE\Local Settings\Traces"
+        Remove-Item -Force -Confirm:$false "$env:LocalAppData\Temporary Internet Files"
+        Remove-Item -Force -Confirm:$false "$env:LocalAppData\Microsoft\Windows\Temporary Internet Files"
+        Remove-Item -Force -Confirm:$false "$env:LocalAppData\Microsoft\Windows\INetCookies\PrivacIE"
+        Remove-Item -Force -Confirm:$false "$env:LocalAppData\Microsoft\Feeds Cache"
+        Remove-Item -Force -Confirm:$false "$env:LocalAppData\Microsoft\InternetExplorer\DOMStore"
         #Clear Google Chrome traces
-        Remove-Item /f /q "$env:LocalAppData\Google\Software Reporter Tool\*.log"
-        Remove-Item /s /q "$env:USERPROFILE\Local Settings\Application Data\Google\Chrome\User Data"
-        Remove-Item /s /q "$env:LocalAppData\Google\Chrome\User Data"
-        Remove-Item /s /q "$env:LocalAppData\Google\CrashReports\"
-        Remove-Item /s /q "$env:LocalAppData\Google\Chrome\User Data\Crashpad\reports\"
+        Remove-Item -Force -Confirm:$false "$env:LocalAppData\Google\Software Reporter Tool\*.log"
+        Remove-Item -Force -Confirm:$false "$env:USERPROFILE\Local Settings\Application Data\Google\Chrome\User Data"
+        Remove-Item -Force -Confirm:$false "$env:LocalAppData\Google\Chrome\User Data"
+        Remove-Item -Force -Confirm:$false "$env:LocalAppData\Google\CrashReports\"
+        Remove-Item -Force -Confirm:$false "$env:LocalAppData\Google\Chrome\User Data\Crashpad\reports\"
         #Clear Opera traces
-        Remove-Item /s /q "$env:USERPROFILE\AppData\Local\Opera\Opera"
-        Remove-Item /s /q "$env:APPDATA\Opera\Opera"
-        Remove-Item /s /q "$env:USERPROFILE\Local Settings\Application Data\Opera\Opera"
+        Remove-Item -Force -Confirm:$false "$env:USERPROFILE\AppData\Local\Opera\Opera"
+        Remove-Item -Force -Confirm:$false "$env:APPDATA\Opera\Opera"
+        Remove-Item -Force -Confirm:$false "$env:USERPROFILE\Local Settings\Application Data\Opera\Opera"
         #Clear Safari traces
-        Remove-Item /s /q "$env:USERPROFILE\AppData\Local\Apple Computer\Safari\Traces"
-        Remove-Item /s /q "$env:APPDATA\Apple Computer\Safari"
-        Remove-Item /q /s /f "$env:USERPROFILE\AppData\Local\Apple Computer\Safari\Cache.db"
-        Remove-Item /q /s /f "$env:USERPROFILE\AppData\Local\Apple Computer\Safari\WebpageIcons.db"
-        Remove-Item /s /q "$env:USERPROFILE\Local Settings\Application Data\Apple Computer\Safari\Traces"
-        Remove-Item /q /s /f "$env:USERPROFILE\Local Settings\Application Data\Apple Computer\Safari\Cache.db"
-        Remove-Item /q /s /f "$env:USERPROFILE\Local Settings\Application Data\Safari\WebpageIcons.db"
+        Remove-Item -Force -Confirm:$false "$env:USERPROFILE\AppData\Local\Apple Computer\Safari\Traces"
+        Remove-Item -Force -Confirm:$false "$env:APPDATA\Apple Computer\Safari"
+        Remove-Item -Force -Confirm:$false -Recurse "$env:USERPROFILE\AppData\Local\Apple Computer\Safari\Cache.db"
+        Remove-Item -Force -Confirm:$false -Recurse "$env:USERPROFILE\AppData\Local\Apple Computer\Safari\WebpageIcons.db"
+        Remove-Item -Force -Confirm:$false "$env:USERPROFILE\Local Settings\Application Data\Apple Computer\Safari\Traces"
+        Remove-Item -Force -Confirm:$false -Recurse "$env:USERPROFILE\Local Settings\Application Data\Apple Computer\Safari\Cache.db"
+        Remove-Item -Force -Confirm:$false -Recurse "$env:USERPROFILE\Local Settings\Application Data\Safari\WebpageIcons.db"
         #Clear Listary indexes
-        Remove-Item /f /s /q $env:APPDATA\Listary\UserData > nul
+        Remove-Item -Force -Confirm:$false -Recurse $env:APPDATA\Listary\UserData > nul
         #Clear Java cache
-        Remove-Item /s /q "$env:APPDATA\Sun\Java\Deployment\cache"
+        Remove-Item -Force -Confirm:$false "$env:APPDATA\Sun\Java\Deployment\cache"
         #Clear Flash traces
-        Remove-Item /s /q "$env:APPDATA\Macromedia\Flash Player"
+        Remove-Item -Force -Confirm:$false "$env:APPDATA\Macromedia\Flash Player"
         #Clear Steam dumps, logs and traces
-        Remove-Item /f /q %ProgramFiles(x86)%\Steam\Dumps
-        Remove-Item /f /q %ProgramFiles(x86)%\Steam\Traces
-        Remove-Item /f /q %ProgramFiles(x86)%\Steam\appcache\*.log
+        Remove-Item -Force -Confirm:$false %ProgramFiles(x86)%\Steam\Dumps
+        Remove-Item -Force -Confirm:$false %ProgramFiles(x86)%\Steam\Traces
+        Remove-Item -Force -Confirm:$false %ProgramFiles(x86)%\Steam\appcache\*.log
         #Clear Visual Studio telemetry and feedback data
-        Remove-Item /s /q "$env:APPDATA\vstelemetry" 2>nul
-        Remove-Item /s /q "$env:LocalAppData\Microsoft\VSApplicationInsights" 2>nul
-        Remove-Item /s /q "$env:ProgramData\Microsoft\VSApplicationInsights" 2>nul
-        Remove-Item /s /q "$env:TEMP\Microsoft\VSApplicationInsights" 2>nul
-        Remove-Item /s /q "$env:TEMP\VSFaultInfo" 2>nul
-        Remove-Item /s /q "$env:TEMP\VSFeedbackPerfWatsonData" 2>nul
-        Remove-Item /s /q "$env:TEMP\VSFeedbackVSRTCLogs" 2>nul
-        Remove-Item /s /q "$env:TEMP\VSRemoteControl" 2>nul
-        Remove-Item /s /q "$env:TEMP\VSTelem" 2>nul
-        Remove-Item /s /q "$env:TEMP\VSTelem.Out" 2>nul
+        Remove-Item -Force -Confirm:$false "$env:APPDATA\vstelemetry" 2>nul
+        Remove-Item -Force -Confirm:$false "$env:LocalAppData\Microsoft\VSApplicationInsights" 2>nul
+        Remove-Item -Force -Confirm:$false "$env:ProgramData\Microsoft\VSApplicationInsights" 2>nul
+        Remove-Item -Force -Confirm:$false "$env:TEMP\Microsoft\VSApplicationInsights" 2>nul
+        Remove-Item -Force -Confirm:$false "$env:TEMP\VSFaultInfo" 2>nul
+        Remove-Item -Force -Confirm:$false "$env:TEMP\VSFeedbackPerfWatsonData" 2>nul
+        Remove-Item -Force -Confirm:$false "$env:TEMP\VSFeedbackVSRTCLogs" 2>nul
+        Remove-Item -Force -Confirm:$false "$env:TEMP\VSRemoteControl" 2>nul
+        Remove-Item -Force -Confirm:$false "$env:TEMP\VSTelem" 2>nul
+        Remove-Item -Force -Confirm:$false "$env:TEMP\VSTelem.Out" 2>nul
         #Clear Dotnet CLI telemetry
-        Remove-Item /s /q "$env:USERPROFILE\.dotnet\TelemetryStorageService" 2>nul
+        Remove-Item -Force -Confirm:$false "$env:USERPROFILE\.dotnet\TelemetryStorageService" 2>nul
         #Clear regedit last key
         reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Applets\Regedit" /va /f
         reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Applets\Regedit" /va /f
@@ -1762,9 +1762,9 @@ if ($imagecleanup -eq $true) {
         reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" /va /f
         reg delete "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths" /va /f
         #Clear recently accessed files
-        Remove-Item /f /q "$env:APPDATA\Microsoft\Windows\Recent\AutomaticDestinations\*"
+        Remove-Item -Force -Confirm:$false "$env:APPDATA\Microsoft\Windows\Recent\AutomaticDestinations\*"
         #Clear user pins
-        Remove-Item /f /q "$env:APPDATA\Microsoft\Windows\Recent\CustomDestinations\*"
+        Remove-Item -Force -Confirm:$false "$env:APPDATA\Microsoft\Windows\Recent\CustomDestinations\*"
         #Clear regedit last key
         reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Applets\Regedit" /va /f
         reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Applets\Regedit" /va /f
