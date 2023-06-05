@@ -76,3 +76,6 @@ Get-ChildItem -Recurse *.ps1 | Unblock-File
 powershell.exe -ExecutionPolicy ByPass -File .\sos-optimize-windows.ps1 -cleargpos:$false -installupdates:$false
 ```
 
+
+## Learn more about [Debloating Windows 10 and Windows 11](https://simeononsecurity.ch/github/windows-optimize-debloat/)
+
