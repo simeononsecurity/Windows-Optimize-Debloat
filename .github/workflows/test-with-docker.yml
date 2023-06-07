@@ -1,18 +1,78 @@
-name: Test script against windows docker container
+name: Docker Image CI
+
+
 
 on:
+
   push:
-    branches: [main]
+
+    branches: [master]
+
+
+
 jobs:
+
   build:
+
     runs-on: windows-latest
+
+
+
     steps:
+
       - name: Checkout
+
         uses: actions/checkout@v3
+
+
+
       - name: Login to DockerHub
+
         uses: docker/login-action@v2
+
         with:
+
           username: ${{ secrets.DOCKER_USERNAME }}
+
           password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Build the Docker image
-        run: docker build -t simeononsecurity/windows-optimize-debloat:latest . ; docker push simeononsecurity/windows-optimize-debloat:latest
+
+
+
+      - name: Login to GitHub Container Registry
+
+        uses: docker/login-action@v2
+
+        with:
+
+          registry: ghcr.io
+
+          username: ${{ github.actor }}
+
+          password: ${{ secrets.PAT_TOKEN }}
+
+
+
+      - name: Build Docker image
+
+        run: docker build -t simeononsecurity/windows-optimize-debloat:latest .
+
+      
+
+      - name: Tag Docker image
+
+        run: docker tag simeononsecurity/windows-optimize-debloat:latest ghcr.io/simeononsecurity/windows-optimize-debloat:latest
+
+      
+
+      - name: Push Docker image
+
+        run: |
+
+          docker push simeononsecurity/windows-optimize-debloat:latest
+
+          docker push ghcr.io/simeononsecurity/windows-optimize-debloat:latest
+
+
+
+
+
