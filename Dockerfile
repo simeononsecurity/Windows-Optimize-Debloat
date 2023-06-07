@@ -10,11 +10,10 @@ ARG RUNNER_VERSION
 ENV container docker
 ENV chocolateyUseWindowsCompression false
 SHELL ["powershell.exe"]
-RUN iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1')); \
-    choco feature disable --name showDownloadProgress; \
-    choco feature enable -n allowGlobalConfirmation
+RUN iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1')); choco feature disable --name showDownloadProgress; choco feature enable -n allowGlobalConfirmation
 
-#RUN refreshenv
+RUN Import-Module $env:ChocolateyInstall\\helpers\\chocolateyProfile.psm1
+
 #RUN Write-Host "Install Latest Windows Updates" ; choco install pswindowsupdate; Set-Executionpolicy -ExecutionPolicy RemoteSigned -Force ; Import-Module PSWindowsUpdate -Force ; 
 #RUN refreshenv
 #RUN Add-WUServiceManager -ServiceID 7971f918-a847-4430-9279-4a52d1efe18d -Confirm:$false ; Install-WindowsUpdate -MicrosoftUpdate -AcceptAll -Install ; Get-WuInstall -AcceptAll -IgnoreReboot -IgnoreUserInput -nottitle 'preview' ; Get-WindowsUpdate –Install    
