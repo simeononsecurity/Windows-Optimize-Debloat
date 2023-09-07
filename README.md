@@ -22,13 +22,25 @@ Organizations like [Microsoft](https://microsoft.com), [PrivacyTools.io](https:/
     - Script will still work but not all settings will apply.
   - Windows "N" Editions are not tested.
   - Run the [Windows 10 Upgrade Assistant](https://support.microsoft.com/en-us/help/3159635/windows-10-update-assistant) to update and verify latest major release.
+     
+## Additions, notable changes, and bugfixes:
 
-## Fixing Microsoft Account or Xbox Services:
+**This script adds, removes, and changes settings on your system. Please review the script before running it.**
+
+### Fixing Microsoft Account or Xbox Services:
 This is because we block signing into microsoft accounts. Microsoft's telemetry and identity association is frowned upon. 
 However, if you still wish to use these services see the following issue tickets for the resolution:
 - https://github.com/simeononsecurity/Windows-Optimize-Harden-Debloat/issues/1
 - https://github.com/simeononsecurity/Windows-Optimize-Harden-Debloat/issues/16
 - https://github.com/simeononsecurity/Windows-Optimize-Harden-Debloat/issues/22
+
+### Editing policies in Local Group Policy after the fact:
+
+If you need to modify or change a setting, they are most likely configurable via GPO:
+
+- Import the ADMX Policy definitions from this [repo](https://github.com/simeononsecurity/STIG-Compliant-Domain-Prep/tree/master/Files/PolicyDefinitions) into _C:\windows\PolicyDefinitions_ on the system you're trying to modify.
+
+- Open `gpedit.msc` on on the system you're trying to modify.
 
 ## A list of scripts and tools this collection utilizes:
 - [Microsoft Security Compliance Toolkit 1.0](https://www.microsoft.com/en-us/download/details.aspx?id=55319)
