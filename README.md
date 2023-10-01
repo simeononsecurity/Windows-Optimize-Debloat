@@ -65,7 +65,7 @@ The script may be launched from the extracted GitHub download like this:
 ```powershell
 iwr -useb 'https://simeononsecurity.ch/scripts/windowsoptimizeanddebloat.ps1'|iex
 ```
-**Note**: *This installation version all of the configurations. If you seek to customize it, please use the [Manual Install](https://github.com/simeononsecurity/Windows-Optimize-Debloat/tree/main#manual-install)*
+**Note**: *This installation version installs all of the configurations. If you seek to customize it, please use the [Manual Install](https://github.com/simeononsecurity/Windows-Optimize-Debloat/tree/main#manual-install)*
 
 ### Chocolatey Install:
 Assuming you have [Chocolatey](https://chocolatey.org/install) installed. You may install this script via the following command.
