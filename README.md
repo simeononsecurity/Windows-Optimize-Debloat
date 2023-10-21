@@ -27,6 +27,11 @@ Organizations like [Microsoft](https://microsoft.com), [PrivacyTools.io](https:/
 
 **This script adds, removes, and changes settings on your system. Please review the script before running it.**
 
+### Browsers:
+- Browsers will have additional extentions installed to aid in privacy and security.
+  - See [here](https://github.com/simeononsecurity/Windows-Optimize-Harden-Debloat/issues/11) for additional information.
+- Browsers extension management and other enterprise settings are set. For instructions on how to see these options, you'll need to look at the [GPO instructions](https://github.com/simeononsecurity/Windows-Optimize-Debloat#editing-policies-in-local-group-policy-after-the-fact) below.
+
 ### Fixing Microsoft Account or Xbox Services:
 This is because we block signing into microsoft accounts. Microsoft's telemetry and identity association is frowned upon. 
 However, if you still wish to use these services see the following issue tickets for the resolution:
