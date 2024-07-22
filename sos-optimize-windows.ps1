@@ -160,10 +160,6 @@ if ($removebloatware -eq $true) {
         New-Item -Force  "HKLM:\Software\Policies\Microsoft\Windows\CloudContent"
         Set-ItemProperty "HKLM:\Software\Policies\Microsoft\Windows\CloudContent" "DisableWindowsConsumerFeatures" 1
 
-        #Prevents "Suggested Applications" returning
-        New-Item -Force  "HKLM:\Software\Policies\Microsoft\Windows\CloudContent"
-        Set-ItemProperty "HKLM:\Software\Policies\Microsoft\Windows\CloudContent" "DisableWindowsConsumerFeatures" 1
-
         # Disable Windows Copilot for the current user
         New-Item -Path "HKCU:\Software\Policies\Microsoft\Windows\WindowsCopilot" -Force | Out-Null
         Set-ItemProperty -Path "HKCU:\Software\Policies\Microsoft\Windows\WindowsCopilot" -Name "TurnOffWindowsCopilot" -Type DWord -Value 1
