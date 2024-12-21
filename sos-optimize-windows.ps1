@@ -173,7 +173,17 @@ if ($removebloatware -eq $true) {
         #Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowCopilotButton" -Type DWord -Value 0
         
         # Output a confirmation message
-        Write-Output "The Copilot button has been disabled and hidden from the taskbar."
+        #Write-Output "The Copilot button has been disabled and hidden from the taskbar."
+        
+        # Uninstall the Copilot application
+        Get-AppxPackage *Windows.Copilot* | Remove-AppxPackage
+        Get-AppxPackage *Microsoft.Copilot* | Remove-AppxPackage
+        
+        # Output a confirmation message
+        Write-Output "The Copilot application has been uninstalled."
+
+        DISM /Online /Disable-Feature /FeatureName:"Recall"​
+        Disable-WindowsOptionalFeature -Online -FeatureName "Recall"​
         
         # Uninstall the Copilot application
         Get-AppxPackage *Windows.Copilot* | Remove-AppxPackage
